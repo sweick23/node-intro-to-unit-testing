@@ -7,7 +7,7 @@ const fizzBuzzer= require('../fizzBuzzer');
 describe('fizzBuzzer', function() {
 
   // test the normal case
-  it('should be divided by', function() {
+  it('should be multiples by 3, 5, 15', function() {
     // range of normal inputs, including
     // notable cases like negative answers
     const normalCases = [
@@ -38,3 +38,5 @@ describe('fizzBuzzer', function() {
     });
   });
 });
+
+
