@@ -6,13 +6,13 @@ const fizzBuzzer = require('../fizzBuzzer');
 describe('fizzBuzzer', function(){
     it('should be a multiple fo 3, 5, or 15', function(){
       const multiple = [
-          {a: 15 , b: 30, expected: 'fizz-buzz'},
-          {a: 5, b: 10, expected: 'buzz'},
-          {a: 3, b: 6, expected: 'fizz'}
+          {a: 30, expected: 'fizz-buzz'},
+          {a:10, expected: 'buzz'},
+          {a:6, expected: 'fizz'}
       ];
 
       multiple.forEach(function(num){
-        const answer = fizzBuzzer(num.a, num.b);
+        const answer = fizzBuzzer(num.a);
         answer.should.equal(num.expected);
       });
     });
@@ -22,10 +22,10 @@ describe('fizzBuzzer', function(){
       });
     });
     it('should throw an error if is not a number', function(){
-      const badInputs = [true, false, 'NAN', function() {} [1,2,3]]
+      const badInputs = [true, false, 'NAN', 'a']
       badInputs.forEach(function(input){
-        (function(){
-          fizzBuzzer(input);
+        (function() {
+          fizzBuzzer(input)
         }).should.throw(Error);
       });
     });
